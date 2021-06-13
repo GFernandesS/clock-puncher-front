@@ -1,17 +1,8 @@
 import './App.css'
-import { Container, Button, TextField } from '@material-ui/core'
+import { AppMenu } from './components/AppMenu'
 
 function App() {
-  return (
-    <div className="App">
-      <Container fixed>
-        <TextField id="outlined-basic" label="Usuário" variant="outlined" />
-        <Button variant="contained" color="primary">
-          Default
-        </Button>
-      </Container>
-    </div>
-  )
+  return <AppMenu />
 }
 
 export default App

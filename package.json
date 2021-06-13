@@ -26,6 +26,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "startReact": "react-scripts start",
     "start": "electron-forge start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -12,8 +12,8 @@ const createWindow = () => {
     height: 600,
     minHeight: 600,
     minWidth: 800,
-    resizable: false,
-    titleBarStyle: 'hidden'
+    titleBarStyle: 'customButtonsOnHover',
+    frame: false
   })
 
   mainWindow.loadURL(startUrl)
