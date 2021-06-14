@@ -4,7 +4,7 @@
   "author": "Guilherme F. Schiavone",
   "description": "Aplicação construída para facilitar o 'bater cartão' no Home Office",
   "private": true,
-  "main": "src/electron/electronStarter.js",
+  "main": "src/electron/main.js",
   "prettier": {
     "singleQuote": true,
     "trailingComma": "none",
