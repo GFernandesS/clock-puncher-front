@@ -3,5 +3,12 @@
 }
 
 .Drag.MenuButtom {
-  margin-left: 390px;
+  right: 5px;
+  float: right;
+  position: absolute;
+}
+
+.Toolbar {
+  background-color: red;
+  display: none;
 }

@@ -22,7 +22,7 @@ const AppMenu = () => {
 
   return (
     <AppBar position="relative">
-      <Toolbar variant="dense">
+      <Toolbar variant="dense" className="Toolbar">
         <IconButton
           edge="start"
           color="inherit"
@@ -32,7 +32,7 @@ const AppMenu = () => {
           <MenuOutlined />
         </IconButton>
         <Typography variant="h6">ClockPuncher</Typography>
-        <Box className="Drag MenuButtom" flexGrow={1}>
+        <Box className="Drag MenuButtom">
           <Button color="primary" variant="contained" size="small">
             <MinimizeOutlined />
           </Button>
