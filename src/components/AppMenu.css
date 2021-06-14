@@ -1,3 +1,7 @@
-.MenuButton {
+.Drag {
   -webkit-app-region: no-drag;
+}
+
+.Drag.MenuButtom {
+  margin-left: 390px;
 }

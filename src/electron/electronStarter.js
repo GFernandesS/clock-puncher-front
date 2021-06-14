@@ -1,6 +1,6 @@
 require('dotenv/config')
 const path = require('path')
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 
 const createWindow = () => {
   const startUrl =
@@ -12,7 +12,9 @@ const createWindow = () => {
     height: 600,
     minHeight: 600,
     minWidth: 800,
-    titleBarStyle: 'customButtonsOnHover',
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    },
     frame: false
   })
 
@@ -23,6 +25,8 @@ app.whenReady().then((_) => {
   createWindow()
 })
 
-app.on('window-all-closed', () => {
-  app.quit()
+ipcMain.on('finalize', () => {
+  app.exit()
 })
+
+module.exports = app
