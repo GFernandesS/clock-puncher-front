@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   AppBar,
   Toolbar,
@@ -16,8 +16,19 @@ import {
 import './AppMenu.css'
 
 const AppMenu = () => {
+  const [isMaximized, setIsMaximized] = useState(false)
+
   const handleOnClickClose = (_) => {
     window.main.send('finalize')
+  }
+
+  const handleOnClickMinimize = () => {
+    window.main.send('minimize')
+  }
+
+  const handleOnClickMaximize = () => {
+    isMaximized ? window.main.send('restore') : window.main.send('maximize')
+    setIsMaximized((actualState) => !actualState)
   }
 
   return (
@@ -33,10 +44,20 @@ const AppMenu = () => {
         </IconButton>
         <Typography variant="h6">ClockPuncher</Typography>
         <Box className="Drag MenuButtom">
-          <Button color="primary" variant="contained" size="small">
+          <Button
+            color="primary"
+            variant="contained"
+            size="small"
+            onClick={handleOnClickMinimize}
+          >
             <MinimizeOutlined />
           </Button>
-          <Button color="primary" variant="contained" size="small">
+          <Button
+            color="primary"
+            variant="contained"
+            size="small"
+            onClick={handleOnClickMaximize}
+          >
             <CropDinOutlined />
           </Button>
           <Button
